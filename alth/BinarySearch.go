@@ -1,7 +1,8 @@
 package alth
+
 /**
 如题二分查找法go语言实现
- */
+*/
 type BinarySearch struct{}
 
 func (BinarySearch BinarySearch) Search(arr []int, target int) int {
@@ -15,7 +16,7 @@ func (BinarySearch BinarySearch) Search(arr []int, target int) int {
 
 func bs(arr []int, target int, start int, end int) int {
 
-	if start >= end {
+	if start > end {
 		return -1
 	}
 	middle := (start + end) / 2
@@ -23,10 +24,10 @@ func bs(arr []int, target int, start int, end int) int {
 		return middle
 	}
 	if arr[middle] > target {
-		return bs(arr, target, start, middle)
+		return bs(arr, target, start, middle-1)
 	}
 	if arr[middle] < target {
-		return bs(arr, target, middle, end)
+		return bs(arr, target, middle+1, end)
 	}
 	return -1
 }

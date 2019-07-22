@@ -25,9 +25,7 @@ func bs(arr []int, target int, start int, end int) int {
 	}
 	if arr[middle] > target {
 		return bs(arr, target, start, middle-1)
-	}
-	if arr[middle] < target {
+	} else {
 		return bs(arr, target, middle+1, end)
 	}
-	return -1
 }
